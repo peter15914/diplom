@@ -1,4 +1,6 @@
-# Мой диплом - программный комплекс приближения функций на нерегулярных сетках
+# Мой диплом
+
+## Программный комплекс приближения функций на нерегулярных сетках
 
 В дипломной работе рассматривается задача приближения функций двумерными кубическими сплайнами на нерегулярной сетке.
 
@@ -11,3 +13,17 @@
 В результате работы создан программный комплекс, реализующий следующие задачи: создание триангулированной нерегулярной сетки, построение интерполирующего кубического сплайна, визуализация полученных результатов при помощи поля изолиний.
 
 11.06.2003.
+
+![alt text][screen001]
+![alt text][screen006]
+![alt text][screen002]
+![alt text][screen003]
+![alt text][screen004]
+![alt text][screen005]
+
+[screen001]: https://github.com/peter15914/diplom/blob/main/img/diplom_001.jpg "Скриншот 001"
+[screen002]: https://github.com/peter15914/diplom/blob/main/img/diplom_002.png "Скриншот 002"
+[screen003]: https://github.com/peter15914/diplom/blob/main/img/diplom_003.jpg "Скриншот 003"
+[screen004]: https://github.com/peter15914/diplom/blob/main/img/diplom_004.jpg "Скриншот 004"
+[screen005]: https://github.com/peter15914/diplom/blob/main/img/diplom_005.jpg "Скриншот 005"
+[screen006]: https://github.com/peter15914/diplom/blob/main/img/diplom_006.jpg "Скриншот 006"
