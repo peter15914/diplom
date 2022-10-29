@@ -1,0 +1,1 @@
+triangul.exe aaqq1 datanew
