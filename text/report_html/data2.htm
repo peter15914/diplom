@@ -1,0 +1,237 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+<h1 align="center" style="text-align:center"><span style="letter-spacing: -.2pt">Алгоритм
+построения поля изолиний функций двух
+переменных.</span></h1>
+
+<p align="left"><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">Одним из широко распространенных и
+удобных методов описания поведения функций
+двух переменных является графическое
+изображение поверхностей в виде полей
+изолиний. Особенно часто такое изображение
+используется в задачах геологии, геофизики
+и разработки нефтяных и газовых
+месторождений. Применение для этих целей
+устройств графического изображения
+информации ЭВМ - графопостроителей и
+графических дисплеев требует вычисления с
+достаточно маленьким шагом координат точек,
+лежащих на изображаемых </span><span style="font-family: Arial; color: black">кривых.</span></span></p>
+
+<p align="left"><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">Как правило,
+получение явных аналитических выражений
+для линий уровня, которые должны быть
+нанесены на карту, оказывается невозможным.
+Традиционным подходом при численном
+решении этой задачи является вычисление
+значений Функции в узлах прямоугольной
+сетки и анализ значений в вершинах ее
+четырехугольных элементов. Однако здесь
+как и ранее возникают определенные трудности
+при работе с областями сложной
+конфигурации, кроме того, для обеспечения достаточной
+точности в этом случае приходится производить
+вычисление функции в значительном
+количестве точек, хотя количество
+изображаемых изолиний может быть и
+невелико. С другой
+стороны, при недостаточно мелкой сетке в
+некоторых случаях поведение кривой
+определяется неоднозначно.</span></span></p>
+
+<p align="left"><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">Пусть в области </span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt; mso-ansi-language: EN-US">G</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt"> ,
+границей которой является ломанная, за</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black">дана функция
+двух переменных <!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:41.25pt;
+ height:19.5pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image001.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.5.jpg" v:shapes="_x0000_i1025" width="55" height="26">и требуется в этой
+области проследить изолинию с значением<!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75"
+ style='width:17.25pt;height:15.75pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image003.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.6.jpg" v:shapes="_x0000_i1026" width="23" height="21">, то есть найти
+координаты точек,
+лежащих на кривой </span><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1027" type="#_x0000_t75" style='width:86.25pt;height:24pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image005.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.7.jpg" v:shapes="_x0000_i1027" width="115" height="32">
+</span></span></p>
+
+<p align="left"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">Без
+ограничения общности можно считать<!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ style='width:36pt;height:17.25pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image007.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.8.jpg" v:shapes="_x0000_i1028" width="48" height="23"><span style="mso-spacerun: yes; letter-spacing: -.2pt">&nbsp;&nbsp;</span></span></p>
+
+<p align="left"><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">Вычислительный процесс
+начинается с обхода (например, в по</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black">ложительном направлении) области
+&amp; по границе с достаточно ма­лым шагом<!--[if gte vml 1]><v:shape id="_x0000_i1029" type="#_x0000_t75"
+ style='width:10.5pt;height:21pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image009.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.9.jpg" v:shapes="_x0000_i1029" width="14" height="28">, вычислением
+значений функции в точках, лежащих</span></span></p>
+
+<p align="left"><span style="letter-spacing: -.2pt">на ней и анализе выражения
+<span style="font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:Arial"><!--[if gte vml 1]><v:shape id="_x0000_i1030"
+ type="#_x0000_t75" style='width:125.25pt;height:22.5pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image011.png"
+  o:title=""/>
+</v:shape><![endif]-->
+ </span></span></p>
+
+<p align="left"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial"><span style="letter-spacing: -.2pt">&nbsp;
+<img src="data2.10.jpg" v:shapes="_x0000_i1030" width="167" height="30">, </span> </span><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black">где точки А и
+</span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; mso-ansi-language: EN-US">B</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black"> с
+координатами<!--[if gte vml 1]><v:shape
+ id="_x0000_i1031" type="#_x0000_t75" style='width:47.25pt;height:19.5pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image013.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.11.jpg" v:shapes="_x0000_i1031" width="63" height="26">и<!--[if gte vml 1]><v:shape id="_x0000_i1032"
+ type="#_x0000_t75" style='width:48pt;height:21.75pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image015.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.12.jpg" v:shapes="_x0000_i1032" width="64" height="29"></span><span style="font-size:14.0pt;
+mso-bidi-font-size:12.0pt;font-family:Arial;color:black"> </span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">лежат
+на границе </span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt; mso-ansi-language: EN-US">G</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt"> и расстояние между которыми равно<!--[if gte vml 1]><v:shape id="_x0000_i1033"
+ type="#_x0000_t75" style='width:11.25pt;height:18.75pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image017.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.13.jpg" v:shapes="_x0000_i1033" width="15" height="25"></span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black">.
+Отрицатель<span style="letter-spacing:
+-.2pt">ные значения этого выражения означают,
+что на этом отрезке изо</span>линия
+пересекает границу. Координаты этой точки (которая
+явля­ется первой
+точкой изолинии) может быть приближенно
+найдена по Формулам линейного
+интерполирования или с помощью некоторого
+более точного метода. Итак, пусть нами
+найден отрезок </span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; mso-ansi-language: EN-US">AB</span><i><span style="mso-spacerun: yes; mso-bidi-font-size: 16.0pt; font-family: Arial; color: black">&nbsp;
+</span></i><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black">и первая
+точка изолинии<!--[if gte vml 1]><v:shape id="_x0000_i1034" type="#_x0000_t75"
+ style='width:15.75pt;height:21pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image019.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.14.jpg" v:shapes="_x0000_i1034" width="21" height="28"> (рис. 18). Рассмотрим равносторонний треугольник с
+основанием<!--[if gte vml 1]><v:shape
+ id="_x0000_i1039" type="#_x0000_t75" style='width:21.75pt;height:14.25pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image021.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.15.jpg" v:shapes="_x0000_i1039" width="29" height="19"><span style="mso-spacerun: yes">&nbsp;
+</span>и третьей вершиной С, </span><span style="mso-bidi-font-size: 17.0pt; font-family: Arial; color: black">координаты которой
+могут быть вычислены по формулам:</span><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;
+font-family:Arial"><o:p>
+</o:p>
+</span></span></p>
+
+<p align="center"><span style="mso-bidi-font-size: 12.0pt; font-family: Arial; letter-spacing: -.2pt"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1035" type="#_x0000_t75" style='width:180pt;height:47.25pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image023.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.16.jpg" v:shapes="_x0000_i1035" width="240" height="63"><o:p>
+</o:p>
+</span></p>
+
+<p align="center"><span style="letter-spacing: -.2pt">&nbsp;</span></p>
+
+<p align="left"><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">Если шаг </span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt; mso-ansi-language: EN-US">h</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">
+достаточно мал, то внутри этого
+треугольника содержится только один
+связный кусок изолинии и точка С будет лежать
+внутри области </span><span style="font-size:14.0pt;mso-bidi-font-size:
+16.0pt;font-family:Arial;color:black"> </span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt; mso-ansi-language: EN-US">G</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt"> . В
+зависимости от значения функции в </span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black">точке другой конец
+изолинии (точка<!--[if gte vml 1]><v:shape
+ id="_x0000_i1036" type="#_x0000_t75" style='width:16.5pt;height:15.75pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image025.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.17.jpg" v:shapes="_x0000_i1036" width="22" height="21"> ) располагается
+на от резках </span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; mso-ansi-language: EN-US">AB</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black"> или ВС .
+Будем считать, что точка <!--[if gte vml 1]><v:shape id="_x0000_i1037" type="#_x0000_t75"
+ style='width:12pt;height:16.5pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image027.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.18.jpg" v:shapes="_x0000_i1037" width="16" height="22"><span style="mso-spacerun: yes">&nbsp;</span>лежит
+на отрезке ВО . Тогда на
+этом отрезке построим новый равносторонний
+треугольник В</span><span style="font-family: Arial; color: black"><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; mso-ansi-language: EN-US; letter-spacing: -.2pt">D</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">С, координаты точки </span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; mso-ansi-language: EN-US; letter-spacing: -.2pt">D</span><span style="font-size:14.0pt;
+mso-bidi-font-size:16.0pt;font-family:Arial;color:black"><span style="mso-spacerun: yes; font-family: Arial; color: black; letter-spacing: -.2pt">&nbsp;
+</span>вычисляются по </span><span style="font-size:14.0pt;font-family:Arial;color:black">формулам.</span></span></span></p>
+
+<p align="left"><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">Для
+полученного треугольника описанная
+процедура повторяется до тех пор, пока
+изолиния не пересечет второй раз границу
+области.
+Таким образом, будет получена
+последовательность точек </span><span style="font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1038" type="#_x0000_t75" style='width:1in;height:23.25pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/ZM78BA~1.TCI/LOCALS~1/Temp/msoclip1/01/clip_image029.png"
+  o:title=""/>
+</v:shape><![endif]-->
+<img src="data2.19.jpg" v:shapes="_x0000_i1038" width="96" height="31"></span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">,
+последовательно расположенных на изолинии.
+Описанный алгоритм позволяет прослеживать
+изолинии, пересекающие
+границу области. Однако с небольшой
+модификацией он применяется и для
+замкнутых линий уровня. Для этого можно, на­пример,
+границу области </span><span lang="EN-US" style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt; mso-ansi-language: EN-US">G</span><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt"> дополнить отрезками, лежащими внутри
+ее или использовать в качестве ломанных
+ребра триангулированной сетки.</span></span></p>
+
+<p align="left"><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; color: black; letter-spacing: -.2pt">Для
+реализации этого алгоритма разработана
+программа, которая была использована для
+построения полей изолиний функций.</span></span></p>
+
+</body>
+
+</html>

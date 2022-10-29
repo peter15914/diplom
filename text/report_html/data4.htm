@@ -1,0 +1,325 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Отчет о проделанной работе</title>
+</head>
+
+<body>
+
+<h1><span style="letter-spacing: -.2pt">Отчет о проделанной работе.</span></h1>
+
+<p><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">Реализована
+программа.</span></p>
+
+<p><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">Сформулированы
+критерии оптимальности построения
+нерегулярных сеток.
+</span></p>
+
+<p><span style="letter-spacing: -.2pt"><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">Проведена
+работа по нахождению наиболее оптимального
+способа построения
+</span><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black"> триангулированной
+</span><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">
+сетки на плоскости. Придуман свой алгоритм,
+который является более быстрым и более
+оптимальным по выбранным критериям, чем
+существующие.
+</span></span></p>
+
+<p><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">Программа
+строит триангулированную сетку согласно
+выбранному критерию оптимальности.
+</span></p>
+
+<p><span style="letter-spacing: -.2pt">&nbsp;</span></p>
+
+<p><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">Сформулированы
+критерии оптимальности дополнительных
+условий при выборе свободных переменных в
+системе уравнений, построенной при
+интерполировании.
+</span></p>
+
+<p><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">Проведена
+работа по построению интерполирующего
+сплайна на построенной нерегулярной сетке.
+</span></p>
+
+<p><span style="letter-spacing: -.2pt">&nbsp;</span></p>
+
+<p><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">Разработан
+алгоритм по построению изолиний функции
+двух переменных. Алгоритм реализован.
+</span></p>
+
+<p><span style="letter-spacing: -.2pt">&nbsp;</span></p>
+<h1><span style="letter-spacing: -.2pt"><a name="1"></a>Актуальность программы.</span></h1>
+<p><span style="letter-spacing: -.2pt">&nbsp;</span></p>
+<p><span style="mso-bidi-font-size: 17.5pt; font-family: Arial; color: black; letter-spacing: -.2pt">Программа
+сделана под нужды заказчика.
+</span></p>
+<span style="letter-spacing: -.2pt">
+&nbsp;</span>
+<h1><span style="letter-spacing: -.2pt"><a name="2"></a>Программная реализация.</span></h1>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">Программа состоит из трех
+модулей. 1) построение нерегулярной сетки, 2)построение
+интерполирующего сплайна, 3) построение
+изолиний.</span></p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<h2><span style="letter-spacing: -.2pt"><a name="3"></a>Построение триангулированной
+сетки.</span></h2>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">Создан класс <span lang="EN-US" style="mso-ansi-language:EN-US">CWTriangleGrid</span>,
+предоставляющий методы для построения
+триангулированной сетки.</span></p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">Список <span lang="EN-US" style="mso-ansi-language:EN-US">public</span>-методов:</span></p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<table border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt">
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+LoadSetOfPoints(TPoint
+      *points)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Загружает список точек на
+      плоскости со значениями функции в этих
+      точках.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+SetMethod(METHOD
+      methodtype)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Устанавливает метод
+      нахождения нерегулярной сетки –
+      разбиение Вороного, триангуляция Делоне,
+      либо собственный алгоритм триангуляции.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">+<span lang="EN-US" style="mso-ansi-language:EN-US">CreateGrid</span>()</span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Создает триангулированную
+      сетку.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+GetGrid(TGrid
+      *grid)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Загружает найденную сетку в
+      особом формате в массив.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+SaveGridToFile(CString
+      filename)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Сохраняет найденную сетку в
+      особом формате в файл.</span></p>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<h2><span style="letter-spacing: -.2pt"><a name="4"></a>Построение интерполирующего
+сплайна.</span></h2>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">Создан класс <span lang="EN-US" style="mso-ansi-language:EN-US">CW</span>Spline,
+предоставляющий методы для построения
+сплайна.</span></p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">Список <span lang="EN-US" style="mso-ansi-language:EN-US">public</span>-методов:</span></p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<table border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt">
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+LoadGrid(TGrid
+      *grid)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Загружает триангулированную
+      сетку.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">+<span lang="EN-US" style="mso-ansi-language:EN-US">CreateSpline</span>()</span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Создает сплайн.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+GetSpline
+      (TSpline *spline)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Загружает найденный сплайн в
+      особом формате в массив.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+SaveSplineToFile(CString
+      filename)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Сохраняет найденный сплайн в
+      особом формате в файл.</span></p>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<h2><span style="letter-spacing: -.2pt"><a name="5"></a>Построение изолиний.</span></h2>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">Создан класс <span lang="EN-US" style="mso-ansi-language:EN-US">CW</span>Isolin<span lang="EN-US" style="mso-ansi-language:EN-US">e</span>,
+визуализирующий построение изолиний.
+Порожден от класса <span lang="EN-US" style="mso-ansi-language:EN-US">CWnd</span>.</span></p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">Список <span lang="EN-US" style="mso-ansi-language:EN-US">public</span>-методов:</span></p>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+<table border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt">
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">- <span lang="EN-US" style="mso-ansi-language:EN-US">BOOL</span><span lang="EN-US">
+      </span><span lang="EN-US" style="mso-ansi-language:EN-US">visualize</span></span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Флаг, определяющий,
+      визуализировать загруженный сплайн или
+      нет.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+LoadSpline(TSpline
+      *spline)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Загружает сплайн.</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="316" valign="top" style="width:236.65pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US" style="mso-ansi-language: EN-US; letter-spacing: -.2pt">+Visualize(BOOL
+      true)<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="316" valign="top" style="width:236.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+      <p class="MsoNormal"><span style="letter-spacing: -.2pt">Устанавливает переменную
+      visualize.</span></p>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="letter-spacing: -.2pt">&nbsp;<o:p>
+</o:p>
+</span>
+</p>
+
+</body>
+
+</html>
